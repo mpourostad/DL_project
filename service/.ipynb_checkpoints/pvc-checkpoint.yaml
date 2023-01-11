@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: inference-pvc # Enter a name for your PVC.
+spec:
+  accessModes:
+  - ReadWriteOnce # ReadWriteOnce is the only supported access mode. You can mount the PVC to one pod on one worker node in the cluster at a time.
+  resources:
+    requests:
+      storage: 10Gi # Enter the size. Make sure that the size is supported in the profile that you chose. # Enter the storage class name that you selected earlier.
