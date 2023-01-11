@@ -24,9 +24,6 @@ Our 3rd and final experiment replaced the BCE loss and instead added PSNR as a m
 
 We also added L1 loss to the GAN criterion for the generator networks in each of these experiments to reduce the effect of producing grey or brown toned images.
 
-```
-Results\visualizations folder holds 2 images, one showcases the original dataset. And one image showing the sample inference output.
-.
 ## Dependencies to be added. - 
 1.  Torch (version '1.9.1+cu102') - 
    ```
@@ -80,8 +77,6 @@ python main.py --net resnet-50 --dataset <your_path_to_dataset> --GAN_Mode PSNR 
 ```
 python infer.py --net resnet-18 --pathNetG <path_to_the_weights_of_the_resnet18> --pathGAN <path_to_the_final_gan_model> --pathImg <path_to_test_image> --pathOP <path_to_output_directory>
 ```
-link to access inference service deployed using kubernetes - http://02f39fe9-eu-de.lb.appdomain.cloud:8000/
-
 ## RESULTS
 
 1. Baseline vs Res18-Unet (BCE with Logits Loss)
