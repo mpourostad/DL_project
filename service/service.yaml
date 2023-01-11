@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-colorization
+spec:
+  selector:
+    app: inference-imagecolorization 
+  ports:
+    - protocol: "TCP"
+      port: 8000
+      targetPort: 5005
+  type: LoadBalancer

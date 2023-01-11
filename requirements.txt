@@ -1,0 +1,10 @@
+torch
+torchvision
+flask
+gluoncv
+matplotlib
+requests
+Pillow
+fastai==2.4
+scikit-image
+numpy

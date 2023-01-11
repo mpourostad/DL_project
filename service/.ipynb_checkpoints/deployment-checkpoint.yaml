@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-imagecolorization 
+  labels:
+    app: inference-imagecolorization 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-imagecolorization 
+  template:
+    metadata:
+      labels:
+        app: inference-imagecolorization 
+    spec:
+      containers:
+      - name: inference-image-colorization
+        image: mp5737/inference_deeplearning:1.7
+        ports:
+            - containerPort: 5005
+        # imagePullPolicy: Always
+      volumes:
+      - name: pvc-03150f78-c3d4-4ead-b033-5f69ad44c061
+        persistentVolumeClaim:
+          claimName: inference-pvc
