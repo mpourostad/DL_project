@@ -57,7 +57,7 @@ def lab_to_rgb(L, ab):
     return np.stack(rgb_imgs, axis=0)
 
 
-def visualize(model, data,path, save=True):
+def visualize(model, data, save=True):
     model.net_G.eval()
     with torch.no_grad():
         model.setup_input(data)
@@ -81,11 +81,9 @@ def visualize(model, data,path, save=True):
         ax.axis("off")
     plt.show()
     if save:
-        fig.savefig(path)
+        fig.savefig(f"colorization_{time.time()}.png")
 
 
-def log_results(log,loss_meter_dict):
+def log_results(loss_meter_dict):
     for loss_name, loss_meter in loss_meter_dict.items():
         print(f"{loss_name}: {loss_meter.avg:.5f}")
-        log[loss_name].append(loss_meter.avg)
-    return log
